@@ -3,6 +3,7 @@
 ##README: This init.rb file is a starting point for my application. It could be named anything, like 'launch.rb', but 'init' is sort of a convention for any file that kicks off a process or app.
 
 	#Here, we're going to set our Application Root.
+	# This is a stand-alone commnand that stores wherever init.rb lives as APP_ROOT
 	APP_ROOT = File.dirname(__FILE__)
 
 	## You want to first require the guide.rb file (this is a class that will instantiate all the stuff we need to get our app started). There are a couple ways to do this. We will do Option #3.
