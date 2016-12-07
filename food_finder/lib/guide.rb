@@ -2,13 +2,27 @@
 
 # This is going to be the 'heart' of our food_finder app. This is going to handle all the user input and output, and essentially 'control' what's going on.
 
+require 'restaurant'
+
 class Guide
 
 	def initialize(path=nil) #We give it a variable path to pass in as an argument to make the Guide class flexible, in case we want multiple Guide classes, say, for different cities.
 
-		#This locates the restaurant text file path.
-		#Or creates a new file.
-		#Or exits if the create fails
+	Restaurant.filepath = path	#This has a problem: the 'filepath' variable is not available for editing outside the Restaurant class.	
+
+	# We've set the path in the Restaurant.rb file. Now we need to tell it where it should be.
+	
+		if Restuarant.file_exists?
+			puts "Found restaurant file."
+
+		elsif Restuarant.create_file
+			puts "Created restaurant file."
+
+		else puts "Exiting.\n\n"
+			exit!
+
+		end
+
 	end
 
 	def launch!
